@@ -2,13 +2,16 @@ import Fluent
 import Vapor
 
 func routes(_ app: Application) throws {
-    app.get { req in
-        return "It works!"
+    
+    app.post("payment") { (req) -> EventLoopFuture<Payment> in
+        
+        let payment = try req.content.decode(Payment.self)
+        print(payment)
+        return payment.create(on: req.db).map { payment }
     }
-
-    app.get("hello") { req -> String in
-        return "Hello, world!"
+    
+    app.get("payments") { (req) -> EventLoopFuture<[Payment]> in
+        Payment.query(on: req.db).all()
     }
-
-    try app.register(collection: TodoController())
+    
 }
