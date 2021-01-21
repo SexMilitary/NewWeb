@@ -6,8 +6,8 @@ import Vapor
 public func configure(_ app: Application) throws {
 
     app.databases.use(.postgres(hostname: "localhost",
-                                username: "postgres",
-                                password: "",
+                                username: "postgress",
+                                password: "13017613",
                                 database: "maindb"),
                       as: .psql)
     
