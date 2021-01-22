@@ -1,5 +1,6 @@
 import Fluent
 import Vapor
+import FluentPostgresDriver
 
 func routes(_ app: Application) throws {
     
@@ -17,4 +18,17 @@ func routes(_ app: Application) throws {
     app.get("testing") { req -> String in
         return "Succes"
     }
+    
+    app.get("v1","payments","search") { req -> EventLoopFuture<[Payment]> in
+    
+        guard let searchTerm =
+           req.query[String.self, at: "label"] else {
+           throw Abort(.badRequest)
+         }
+        
+        return Payment.query(on: req.db)
+            .filter(\.$label == searchTerm)
+            .all()
+    }
+    
 }
