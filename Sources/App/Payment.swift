@@ -39,7 +39,7 @@ final class Payment: Model, Content {
     var amount: Double
     
     @Field(key: "withdraw_amount")
-    var withdraw_amount: Double
+    var withdraw_amount: Double?
     
     @Field(key: "label")
     var label: String
@@ -59,7 +59,7 @@ final class Payment: Model, Content {
          codepro: Bool,
          currency: String,
          amount: Double,
-         withdrawAmount: Double,
+         withdrawAmount: Double?,
          label: String,
          unaccepted: Bool) {
         
