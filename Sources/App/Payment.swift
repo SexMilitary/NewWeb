@@ -27,7 +27,7 @@ final class Payment: Model, Content {
     var sha1_hash: String
     
     @OptionalField(key: "sender")
-    var sender: Int?
+    var sender: String?
     
     @Field(key: "codepro")
     var codepro: Bool
@@ -36,10 +36,10 @@ final class Payment: Model, Content {
     var currency: String
     
     @Field(key: "amount")
-    var amount: Double
+    var amount: String
     
     @Field(key: "withdraw_amount")
-    var withdraw_amount: Double?
+    var withdraw_amount: String?
     
     @Field(key: "label")
     var label: String
@@ -55,11 +55,11 @@ final class Payment: Model, Content {
          notificationType: String,
          datetime: String,
          sha1Hash: String,
-         sender: Int?,
+         sender: String?,
          codepro: Bool,
          currency: String,
-         amount: Double,
-         withdrawAmount: Double?,
+         amount: String,
+         withdrawAmount: String?,
          label: String,
          unaccepted: Bool) {
         

@@ -6,7 +6,7 @@ func routes(_ app: Application) throws {
     app.post("v1", "payment") { (req) -> EventLoopFuture<Payment> in
         
         let payment = try req.content.decode(Payment.self)
-        print(payment)
+        print(payment, req.content)
         return payment.create(on: req.db).map { payment }
     }
     
