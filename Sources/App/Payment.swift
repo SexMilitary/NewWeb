@@ -27,7 +27,7 @@ final class Payment: Model, Content {
     var sha1_hash: String
     
     @OptionalField(key: "sender")
-    var sender: String?
+    var sender: Int?
     
     @Field(key: "codepro")
     var codepro: Bool
@@ -55,7 +55,7 @@ final class Payment: Model, Content {
          notificationType: String,
          datetime: String,
          sha1Hash: String,
-         sender: String?,
+         sender: Int?,
          codepro: Bool,
          currency: String,
          amount: String,
@@ -112,3 +112,14 @@ final class Payment: Model, Content {
 
 //unaccepted    boolean    Перевод еще не зачислен. Получателю нужно освободить место в кошельке или использовать код протекции (если codepro=true).
 
+//label: "",
+//unaccepted: false,
+//sha1_hash: "fdcc7ff313b9452938e90dddc2a50d654e765cb3",
+//sender: "41001000040",
+//currency: "643",
+//amount: "441.10",
+//codepro: false,
+//notification_type: "p2p-incoming",
+//withdraw_amount: nil,
+//datetime: "2021-01-22T09:29:22Z",
+//operation_id: "test-notification"

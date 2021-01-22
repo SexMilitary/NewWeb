@@ -17,7 +17,7 @@ struct CreatePayment: Migration {
             .field("notification_type", .string)
             .field("datetime", .string)
             .field("sha1_hash", .string)
-            .field("sender", .string)
+            .field("sender", .int)
             .field("codepro", .bool)
             .field("currency", .string)
             .field("amount", .string)
