@@ -26,8 +26,8 @@ final class Payment: Model, Content {
     @Field(key: "sha1_hash")
     var sha1_hash: String
     
-    @OptionalField(key: "sender")
-    var sender: Int?
+    @Field(key: "sender")
+    var sender: Int
     
     @Field(key: "codepro")
     var codepro: Bool
@@ -55,7 +55,7 @@ final class Payment: Model, Content {
          notificationType: String,
          datetime: String,
          sha1Hash: String,
-         sender: Int?,
+         sender: Int,
          codepro: Bool,
          currency: String,
          amount: String,
