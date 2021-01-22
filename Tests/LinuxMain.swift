@@ -1,7 +1,7 @@
 import XCTest
 
-import YooPayTests
+import NewWebTests
 
 var tests = [XCTestCaseEntry]()
-tests += YooPayTests.allTests()
+tests += NewWebTests.allTests()
 XCTMain(tests)

@@ -14,4 +14,7 @@ func routes(_ app: Application) throws {
         Payment.query(on: req.db).all()
     }
     
+    app.get("test") { req -> String in
+        return "Succes"
+    }
 }
